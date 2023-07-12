@@ -1,7 +1,7 @@
 import { AuthOptions } from "./api/auth/[...nextauth]/route";
 import {getServerSession} from "next-auth";
 import { User } from "./user";
-import { LoginButton, LogoutButton } from "./auth";
+import { LoginButton, LogoutButton } from "../src/components/UI/atom/auth";
 import RegisterForm from "@/components/UI/molecule/registerForm";
 import LoginForm from "@/components/UI/molecule/loginForm";
 
