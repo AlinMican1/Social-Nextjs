@@ -1,0 +1,28 @@
+.container{
+    width: 300px;
+    background-color: rgba(0, 255, 255, 0);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container p{
+    margin-top: 2px;
+    margin-bottom: -5px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    
+}
+.container p::before, .container p::after{
+    content: "";
+    height: 1px;
+    background-color: white;
+    display: block;
+}
+
+.container h3{
+    margin-top: 60px;
+    margin-bottom: 10px;
+}

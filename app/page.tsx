@@ -1,8 +1,27 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import { AuthOptions } from "./api/auth/[...nextauth]/route";
+import {getServerSession} from "next-auth";
+import { User } from "./user";
+import { LoginButton, LogoutButton } from "./auth";
+import RegisterForm from "@/components/UI/molecule/registerForm";
+import LoginForm from "@/components/UI/molecule/loginForm";
 
-export default function Home() {
+export default async function LoginPage() {
+  const session = await getServerSession(AuthOptions)
   return (
+    <div>
+    <LoginButton />
+    <LogoutButton />
+    <h2>USE SERVER</h2>
+    <pre>{JSON.stringify(session)}</pre>
+    <h2>USE CLIENT</h2>
+    <User />
+    <RegisterForm />
+    <LoginForm />
+    </div>
+  );
+}
+
+  /*return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
@@ -92,4 +111,4 @@ export default function Home() {
       </div>
     </main>
   )
-}
+}*/

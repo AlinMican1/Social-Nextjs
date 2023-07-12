@@ -1,0 +1,12 @@
+- File names should start with small capital letters e.g button
+- Function name should be with capital letters of the file name e.g if file name is "button" function name will be "Button".
+- Work with atomic structure.
+- Always export a default function.
+- Appropriate variable names.
+- Appropriate Branch names with capital letters.
+- To run project use npm run dev.
+- To run prisma use npx prisma studio (MAKE SURE TO BE IN THE RIGHT DIR).
+- To update prisma schema do the following :
+  1. npx prisma migrate dev --name (a name)
+  2. reset all date ? yes
+  3. 
