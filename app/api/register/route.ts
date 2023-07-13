@@ -12,7 +12,11 @@ export async function POST(req: Request){
                 name,
                 email,
                 password:hashed
-            }
+                
+            },
+            include: {
+                accounts: true
+              }
         })
     
         return NextResponse.json({

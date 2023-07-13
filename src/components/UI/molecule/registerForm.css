@@ -1,23 +1,48 @@
-.FormContainer{
-    display:flex;
+body.active-modal {
+  overflow-y: hidden;
 }
 
-.FormContainer h1{
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+
+.modal h1{
     padding-top: 0px;
     padding-left: 60px;
     color: black;
     
 }
-.FormContainer form {
-    background-color: #e70f0f;
-    
-    width: 600px;
-    height: 500px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-.FormContainer label {
+
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+}
+/*.FormContainer label {
     display: block;
     margin-bottom: 5px;
     color: #ffffff;
@@ -31,4 +56,4 @@
     border-radius: 5px;
     border: none;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-  }
+  }*/
