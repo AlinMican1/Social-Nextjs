@@ -7,11 +7,9 @@ import Link from 'next/link'
  
 
 export const GoogleSignInButton = () => {
-    const handleClick = () => {
-        signIn("google");
-    }
+    
     return (
-        <button onClick={handleClick} className='default'>Continue with Google</button>
+        <button onClick={() => signIn("google")} className='default'>Continue with Google</button>
   )
 }
 

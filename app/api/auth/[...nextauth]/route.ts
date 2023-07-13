@@ -3,6 +3,7 @@ import { prisma } from '../../../../lib/prisma';
 
 import NextAuth, { type NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import GoogleProvider from 'next-auth/providers/google';
 
 export const AuthOptions: NextAuthOptions = {
   pages:{
@@ -38,6 +39,7 @@ export const AuthOptions: NextAuthOptions = {
               email:credentials.email,
               name: credentials.name}
         })
+        
 
         if(!user){
             return null
@@ -53,7 +55,11 @@ export const AuthOptions: NextAuthOptions = {
             name: user.name
         }
         }
-    })
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    }),
 ],
   callbacks: {
     session: ({session, token}) =>{

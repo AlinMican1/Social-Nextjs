@@ -4,19 +4,17 @@ import { User } from "./user";
 import { LoginButton, LogoutButton } from "../src/components/UI/atom/auth";
 import RegisterForm from "@/components/UI/molecule/registerForm";
 import LoginForm from "@/components/UI/molecule/loginForm";
+import VerticalNavBar from "../src/components/UI/organism/verticalNavBar"
 
 export default async function LoginPage() {
   const session = await getServerSession(AuthOptions)
   return (
     <div>
-    <LoginButton />
-    <LogoutButton />
     <h2>USE SERVER</h2>
     <pre>{JSON.stringify(session)}</pre>
     <h2>USE CLIENT</h2>
     <User />
-    <RegisterForm />
-    <LoginForm />
+    <VerticalNavBar />
     </div>
   );
 }
