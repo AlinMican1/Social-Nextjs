@@ -10,16 +10,20 @@ interface inputType{
     value: any,
     name:string,
     onChange: React.ChangeEventHandler<HTMLInputElement>,
+    register: any
+    errors: any
     
 }
-const CustomInput = ({type,inputName,id,value,name,onChange}:inputType) => {
+const CustomInput = ({type,inputName,id,value,name,onChange,register,errors}:inputType) => {
     
     return (
     <div className="formContainer">
-        <div className='inputBox'>
-        <input type = {type} id={id} value = {value} name={name} onChange={onChange} placeholder={inputName} />
+        <div className="inputBox">
+        <input type = {type} id={id} value = {value} name={name} onChange={onChange} placeholder={inputName} {...register(name, {required: true})}/>
         {/* <span>{inputName}</span> */}
-        <div className='inputLabel'>{inputName}</div>
+        <div className="">{inputName}</div>
+        errors[name] ? <p>Required</p> : <></>
+        
         </div>
     </div>
   )

@@ -12,13 +12,13 @@ const VerticalNavBar = () => {
     
     <div className='container'>
         <LoginForm />
-        <GoogleSignInButton />
+        {/* <GoogleSignInButton />
         
         <p className='custom-p'>Or</p>
         <RegisterForm />
 
         <h3>Already have an account?</h3>
-        
+         */}
     </div>
   )
 }

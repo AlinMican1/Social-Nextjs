@@ -1,18 +1,118 @@
-.loginContainer{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Poppins:wght@600;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+.containerForm{
     display: flex;
-    justify-content: center;
+    place-content: center;
+    height: 100vh;
+    font-family: 'Poppins' , sans-serif;
+    background-color: rgb(44, 43, 43);
+    color: #fff;
+}
+.input-header{
+   
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #b3b3b3;
+    
+}
+
+.input-header::before{
+    content: "";
+    height: 5px;
+    background-color: #272530;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+.input-control {
+    width: 280px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    min-height:30vh;
+}
+
+.input-control input {
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #382f26;
+    background: #272530;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all .3s;
+    color: #fff;
     
+	/* border-radius: 4px;
+	display: block;
+	font-size: 12px;
+	padding: 10px;
+	width: 50%; */
     
-    background-color: aliceblue;
+}
+
+.input-control input:focus {
+    border: 2px solid #fd7f0a;
+}
+
+.input-control input:focus+.input-header,
+.filled{
+    top: -10px;
+    color: #fd7f0a;
+    font-size: 14px;
+
+}
+.input-control input:focus+.input-header,
+.input-control input:valid+.input-header{
+    top: -10px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+.input-control input::placeholder{
+    font-size: 16px;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.input-control input:focus::placeholder{
+    opacity: 1;
+    animation-delay: 0.2s;
+
+}
+.input-control.success input {
+    border-color: #f0f0f0;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 13px;
+    height: 20px;
+    margin-top: 5px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+   
 }
 
 .errorMsg{
-    color: rgb(201, 57, 57);
-    font-weight: 700;
-    font-size: large;
+    color: #ff3860;
+    font-size: 17px;
+    padding-top: 40px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
 }
-#username{
-    margin-top: -80px ;
-}
+

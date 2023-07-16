@@ -1,14 +1,16 @@
 .formContainer{
-    width:680px;
+    display: flex;
+    justify-content: center;
 }
 
 .inputBox{
-    position: relative;
-    height: 80px;
-    line-height: 80px;
-
+    
+    width:200px;
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
 }
-.formContainer input{
+/* .formContainer input{
     position: absolute;
     width:100%;
     outline: none;
@@ -45,4 +47,8 @@
     padding: 0 12px;
     transform: translate(-15px,-16px) scale(0.88);
     z-index: 1111;
+} */
+
+.errorMsg{
+    color: red;
 }

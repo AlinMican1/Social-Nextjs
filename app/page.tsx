@@ -17,9 +17,9 @@ export default async function LoginPage() {
     <h2>USE CLIENT</h2>
     <User />
     <VerticalNavBar />
-    <LogoutButton/>
+    {/* <LogoutButton/> */}
     
-    <Link href="/register">CREATE ACCOUNT</Link>
+    {/* <Link href="/register">CREATE ACCOUNT</Link> */}
     </div>
   );
 }
