@@ -6,6 +6,7 @@ import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { ErrorAlert } from '../atom/errorAlert';
 import Button from '../atom/button';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -16,7 +17,7 @@ const RegisterForm = () => {
     const[password,setPassword] = useState('')
     const[error,setError] = useState<string | null>(null)
     const [modal, setModal] = useState(false);
-    
+    const router = useRouter();
     const [isRegistered, setIsRegistered] = useState(false);
 
     const toggleModal = () =>{
@@ -41,6 +42,9 @@ const RegisterForm = () => {
           if(res.ok){
             signIn()
             
+            //signIn('credentials', { email, password })
+            
+            
           }
           /*SET ERROR MESSAGE HERE */
           else{
@@ -51,7 +55,8 @@ const RegisterForm = () => {
         setError(error?.message)
         
       }
-    }
+    };
+    
     
       
   return (

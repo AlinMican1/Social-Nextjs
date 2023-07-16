@@ -1,8 +1,8 @@
-import { LogoutButton } from "../../src/components/UI/atom/auth"
+import { LogoutButton } from "../../src/components/UI/atom/authButtons"
 export default async function Home(){
     
     return <div>
-        <LogoutButton />
+        <LogoutButton/>
         HOME PAGE
     </div>
     

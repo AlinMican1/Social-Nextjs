@@ -8,10 +8,11 @@ interface RegisterFormProps {
   btnVariant: string;
   btnIcon?: any,
   onClick?: () => void,
+  type?: "submit",
 }
 
-export const Button = ({btnText, btnVariant, onClick, btnIcon}:RegisterFormProps) => {
-    return ( <button className={btnVariant} onClick = {onClick} >
+export const Button = ({btnText, btnVariant, onClick, btnIcon, type}:RegisterFormProps) => {
+    return ( <button className={btnVariant} onClick = {onClick} type={type} >
       {btnIcon}
       {btnText}
     </button>)

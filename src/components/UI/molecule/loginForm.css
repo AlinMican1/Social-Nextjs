@@ -1,0 +1,18 @@
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:30vh;
+    
+    
+    background-color: aliceblue;
+}
+
+.errorMsg{
+    color: rgb(201, 57, 57);
+    font-weight: 700;
+    font-size: large;
+}
+#username{
+    margin-top: -80px ;
+}
