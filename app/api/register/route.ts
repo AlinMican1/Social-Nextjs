@@ -14,9 +14,7 @@ export async function POST(req: Request){
                 password:hashed
                 
             },
-            include: {
-                accounts: true
-              }
+            
         })
     
         return NextResponse.json({
