@@ -7,7 +7,7 @@ interface RegisterFormProps {
   btnText: string;
   btnVariant: string;
   btnIcon?: any,
-  onClick?: () => void,
+  onClick?: () => any,
   type?: "submit",
 }
 

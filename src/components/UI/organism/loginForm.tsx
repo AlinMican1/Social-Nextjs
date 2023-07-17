@@ -1,13 +1,15 @@
 'use client'
 
+import '../../../../styles/globals.css'
 import React from 'react';
-import './registerForm.css';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { ErrorAlert } from '../atom/errorAlert';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Button from '../atom/button';
 import './loginForm.css';
+import { GoogleSignInButton, LogoutButton  } from '../atom/authButtons';
+import Link from 'next/dist/client/link';
 
 const LoginForm = () => {
     const router = useRouter()
@@ -54,7 +56,8 @@ const LoginForm = () => {
             
             if(!res?.error){
                 router.push(callbackUrl)
-            }else{
+                setError1('')
+            }else if(email !== '' && password !== ''){
                 setError1('Invalid email or password!')
             }
 
@@ -74,16 +77,20 @@ const LoginForm = () => {
         }
     }
     return (
+       
+       <div>
+        <h1>Sign In to your Account</h1>
         <div className="containerForm">
-            <form  onSubmit={onSubmit} >
-                <h1>Log in</h1>
+            
+            <form className='loginForm' onSubmit={onSubmit}>
+                
                 <div className="input-control">
-                    <input type='text' id='email' name='email' value={email} placeholder='Email' onChange={(e) => setEmail(e.target.value)}/> 
+                    <input type='text' id='email' name='email' placeholder='Enter Your Email' value={email}  onChange={(e) => setEmail(e.target.value)}/> 
                     <label className='input-header' htmlFor="email">Email</label>
                     <div className="error" />
                 </div>
                 <div className="input-control"> 
-                    <input type='password' id='password' name='password' value={password} placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+                    <input type='password' id='password' name='password' placeholder='Enter Your Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                     <label className='input-header' htmlFor="password">Password</label>
                     <div className="error" />
                     
@@ -91,10 +98,22 @@ const LoginForm = () => {
                 <span className= "errorMsg">{error1 && <ErrorAlert>{error1}</ErrorAlert>}</span>
                 
                 
-              
-                <Button btnText='Submit' btnVariant='default' type='submit' />
+              <div className='btn-position'>
+                <Button btnText='Sign In' btnVariant='submit-btn' type='submit' />
+                </div>
             </form>
+            <p className='custom-p'>or continue with</p>
+            <div className='btn-provider-container'>
+                <GoogleSignInButton/>
+                <GoogleSignInButton/>
+                {/* <LogoutButton /> */}
+            </div>
+            <div className='Register-link-with-text'>
+            <p>New to App Name ? </p>
+            <Link className='link-register' href='/register' >Create an account </Link>
+            </div>
             
+        </div>
         </div>
     )
 }

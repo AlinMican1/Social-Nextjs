@@ -108,6 +108,10 @@ a {
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Poppins:wght@600;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+
+
 .App {
   text-align: center;
   background-color: #000000;
@@ -137,22 +141,27 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #303436;
-  border-right: 1px solid rgb(232, 97, 192);
-  border-left: 1px solid rgb(232, 97, 192); ;
+  
+ 
   
 }
 
 /* CHANGE DEFAULTS HERE */
 
 p{
-  color: rgb(255, 255, 255);
+  color: #fdfbfe;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
 }
 h3{
-  color: rgb(255, 255, 255);
+  color: #fdfbfe;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+  align-items: center;
+}
+h1{
+  color: #fdfbfe;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
   align-items: center;
 }

@@ -2,14 +2,32 @@
     cursor: pointer;
     background-color: #4CAF50;
     border: none;
-    color: white;
+    color: #fdfbfe;
     padding: 15px 32px;
     text-align: center;
     font-size: 16px; 
     border-radius: 20px;
 }
 
-.default:hover{
-    background-color: aqua;
+.submit-btn{
+    cursor: pointer;
+    background-color: #a324c6;
+    border: none;
+    color: #fdfbfe;
+    padding: 12px 32px;
+    text-align: center;
+    font-size: 16px; 
+    border-radius: 6px;
+    font-family: 'Poppins' , sans-serif;
+    width: 100%;
 }
 
+.default:hover{
+    background-color: #d07ee7;
+    color: rgb(167, 163, 163)
+}
+
+.submit-btn:hover{
+    background-color: #d07ee7;
+    color: rgb(255, 255, 255)
+}
