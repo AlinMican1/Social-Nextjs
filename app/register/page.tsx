@@ -1,6 +1,5 @@
 import React from 'react'
-import VerticalNavBar from '@/components/UI/organism/verticalNavBar'
-import RegisterForm from '@/components/UI/molecule/registerForm'
+import RegisterForm from '@/components/UI/organism/registerForm'
 const page = () => {
   return (
         <RegisterForm />

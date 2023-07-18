@@ -1,25 +1,26 @@
 import { AuthOptions } from "./api/auth/[...nextauth]/route";
 import {getServerSession} from "next-auth";
 import { User } from "./user";
-//import { LoginButton, LogoutButton } from "../src/components/UI/atom/auth";
 import VerticalNavBar from "../src/components/UI/organism/verticalNavBar"
 import { LogoutButton } from "@/components/UI/atom/authButtons";
 import Link from "next/dist/client/link";
 import CustomInput from "@/components/UI/atom/customInput";
-
+import LoginForm from "@/components/UI/organism/loginForm";
+import NavBar from "@/components/UI/molecule/navBar";
 export default async function LoginPage() {
   const session = await getServerSession(AuthOptions)
   return (
     <div>
+      
     {/* <CustomInput type={'text'} inputName="Hello" id= /> */}
-    <h2>USE SERVER</h2>
+    {/* <h2>USE SERVER</h2>
     <pre>{JSON.stringify(session)}</pre>
     <h2>USE CLIENT</h2>
-    <User />
-    <VerticalNavBar />
-    {/* <LogoutButton/> */}
+    <User /> */}
+    <LoginForm/>
     
-    {/* <Link href="/register">CREATE ACCOUNT</Link> */}
+    
+    
     </div>
   );
 }

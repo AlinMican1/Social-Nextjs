@@ -6,6 +6,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google';
 
 export const AuthOptions: NextAuthOptions = {
+  
   pages:{
     signIn: '/',
     signOut: '/'
@@ -61,6 +62,7 @@ export const AuthOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
 ],
+//secret: process.env.JWT_SECRET,
   callbacks: {
     session: ({session, token}) =>{
       return {
@@ -81,7 +83,9 @@ export const AuthOptions: NextAuthOptions = {
       }
       return token
     }
-  }
+  },
+  
+  
 }
 
 const handler = NextAuth(AuthOptions)

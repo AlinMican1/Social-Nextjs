@@ -3,13 +3,14 @@
 import React from 'react';
 import {signIn, signOut} from "next-auth/react";
 import './button.css';
-
+import './authButtons.css'
+import { BsGithub, BsGoogle } from 'react-icons/bs'
  
 
 export const GoogleSignInButton = () => {
     
     return (
-        <button onClick={() => signIn("google")} className='default'>Continue with Google</button>
+        <button onClick={() => signIn("google")} className='login-provider-btn' > <BsGoogle/></button>
   )
 }
 
@@ -18,7 +19,7 @@ export const GoogleSignInButton = () => {
 //         signIn("github")
 //     }
 //     return (
-//         <button onClick={handleClick} className='default'>Continue with Github</button>
+//         <button onClick={handleClick} className='desfault'>Continue with Github</button>
 //   )
 // }
 

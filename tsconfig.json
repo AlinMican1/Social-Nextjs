@@ -25,6 +25,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/UI/organism/popUp.jsx", "src/components/UI/organism/popUp.jsx", "src/components/UI/atom/button.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/UI/organism/popUp.jsx", "src/components/UI/organism/popUp.jsx", "src/components/UI/atom/button.tsx", "lib/validation.js", "src/components/UI/molecule/registerForm.jsx", "src/components/UI/atom/inputForm.jsx"],
   "exclude": ["node_modules"]
 }

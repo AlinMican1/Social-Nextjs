@@ -1,0 +1,14 @@
+.login-provider-btn{
+    width: 48%;
+    border-radius: 3px;
+    border: none;
+    font-size: 20px;
+    padding-top: 4px;
+    background-color: #fdfbfe;
+    cursor: pointer;
+    color:#23082b
+}
+
+.login-provider-btn:hover{
+    background-color: #d07ee7
+}

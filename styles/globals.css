@@ -108,13 +108,23 @@ a {
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Poppins:wght@600;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
 .App {
   text-align: center;
   background-color: #000000;
   min-height: 100vh;
   display: flex;
   justify-content: center; 
+  flex: 1,1,auto;
 }
+
+
 
 .App-header {
   background-color: #282c34;
@@ -132,27 +142,48 @@ a {
 }
 
 .container-content{
-  min-height: 100vh; /* minimum height = screen height */
-  min-width: 1200px;
+   /* minimum height = screen height */
+  min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #303436;
-  border-right: 1px solid rgb(232, 97, 192);
-  border-left: 1px solid rgb(232, 97, 192); ;
   
 }
+.home-container{
+  background-color: #61dafb41;
+  min-width: 1400px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
 
+}
 /* CHANGE DEFAULTS HERE */
 
 p{
-  color: rgb(255, 255, 255);
+  color: #fdfbfe;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
 }
 h3{
-  color: rgb(255, 255, 255);
+  color: #fdfbfe;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   align-items: center;
+}
+h1{
+  color: #fdfbfe;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  align-items: center;
+}
+
+@media screen and (min-width<=1400px){
+  
+  .home-container{
+      width: 500px;
+  }
+  
+
 }
