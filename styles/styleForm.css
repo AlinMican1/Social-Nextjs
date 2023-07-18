@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Poppins:wght@600;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-.containerForm{
+.containerLoginForm{
 	background: #151515;
 	font-family: 'Poppins', sans-serif;
 	height: 500px;
@@ -12,10 +12,30 @@
     
 
 }
-.loginForm{
+
+.containerRegisterForm{
+    background: #151515;
+	font-family: 'Poppins', sans-serif;
+	height: 700px;
+	display: grid;
+	place-content: center;
+	color: #fdfbfe;
+    width: 500px;
+    border-radius: 20px;
+}
+
+.Form{
     width: 310px
 }
-.containerForm h1{
+
+
+.containerRegisterForm h1{
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+}
+
+.containerLoginForm h1{
     margin-top: -50px;
     display: flex;
     justify-content: center;
@@ -172,4 +192,25 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
+}
+
+.LogIn-link-with-text{
+    margin-top: -10px;
+    width: 270px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 12px;
+}
+.link-logIn{
+    color: #fdfbfe;
+    padding-top: 0px;
+    font-size: 15px;
+    padding-left: -10px;
+}
+
+.link-logIn:hover{
+    color: #d07ee7;
 }

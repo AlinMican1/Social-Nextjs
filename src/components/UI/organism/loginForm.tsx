@@ -1,23 +1,24 @@
 'use client'
 
 import '../../../../styles/globals.css'
+import '../../../../styles/styleForm.css'
 import React from 'react';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { ErrorAlert } from '../atom/errorAlert';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Button from '../atom/button';
-import './loginForm.css';
+
 import { GoogleSignInButton, LogoutButton  } from '../atom/authButtons';
 import Link from 'next/dist/client/link';
 
 const LoginForm = () => {
     const router = useRouter()
-    const searchParams = useSearchParams()
+    //const searchParams = useSearchParams()
     const callbackUrl  = /*searchParams.get('callbackUrl') ||*/ '/home'
     const[email,setEmail] = useState('')
     const[password,setPassword] = useState('')
-    const [error1, setError1] = useState('')
+    const [mainError, setMainError] = useState('')
     
 
     const setError = (element: HTMLInputElement, message: string) => {
@@ -51,26 +52,24 @@ const LoginForm = () => {
                 password,
                 callbackUrl
             })
-            const email1: HTMLInputElement | null = document.getElementById('email') as HTMLInputElement;
-            const password1: HTMLInputElement | null = document.getElementById('password') as HTMLInputElement;
+            const emailHTML: HTMLInputElement | null = document.getElementById('email') as HTMLInputElement;
+            const passwordHTML: HTMLInputElement | null = document.getElementById('password') as HTMLInputElement;
             
             if(!res?.error){
                 router.push(callbackUrl)
-                setError1('')
+                setMainError('')
             }else if(email !== '' && password !== ''){
-                setError1('Invalid email or password!')
+                setMainError('Invalid email or password!')
             }
-
-            
             if(email === '') {
-                setError(email1, 'Email is required!');
+                setError(emailHTML, 'Email is required!');
             } else {
-                setSuccess(email1);
+                setSuccess(emailHTML);
             }
             if(password === '') {
-                setError(password1, 'Password is required!');
+                setError(passwordHTML, 'Password is required!');
             } else {
-                setSuccess(password1);
+                setSuccess(passwordHTML);
             }
         }catch(err:any){
 
@@ -80,7 +79,7 @@ const LoginForm = () => {
        
        <div>
         <h1>Sign In to your Account</h1>
-        <div className="containerForm">
+        <div className="containerLoginForm">
             
             <form className='loginForm' onSubmit={onSubmit}>
                 
@@ -95,7 +94,7 @@ const LoginForm = () => {
                     <div className="error" />
                     
                 </div>
-                <span className= "errorMsg">{error1 && <ErrorAlert>{error1}</ErrorAlert>}</span>
+                <span className= "errorMsg">{mainError && <ErrorAlert>{mainError}</ErrorAlert>}</span>
                 
                 
               <div className='btn-position'>
@@ -105,7 +104,7 @@ const LoginForm = () => {
             <p className='custom-p'>or continue with</p>
             <div className='btn-provider-container'>
                 <GoogleSignInButton/>
-                <GoogleSignInButton/>
+                
                 {/* <LogoutButton /> */}
             </div>
             <div className='Register-link-with-text'>
